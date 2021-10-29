@@ -15,19 +15,20 @@ then(() => {
     }
 });
 
-// {
-//     "Name": "setna",
-//     "Password": "setna123",
-//     "DateOfBirth": "1996-01-01",
-//     "Gender": "Male",
-//     "MobileNumber": 122334,
-//     "Email": "setna@gmail.com",
-//     "Pincode":123444,
-//     "City":"Delhi",
-//     "State": "Delhi",
-//     "Country": "India"
-// }
-
+/*
+{
+    "Name": "setna",
+    "Password": "setna123",
+    "DateOfBirth": "1996-01-01",
+    "Gender": "Male",
+    "MobileNumber": 122334,
+    "Email": "setna@gmail.com",
+    "Pincode":123444,
+    "City":"Delhi",
+    "State": "Delhi",
+    "Country": "India"
+}
+*/
 const usersSchema = new mongoose.Schema(
     {
         UserId: {
@@ -71,14 +72,16 @@ const usersSchema = new mongoose.Schema(
     }
 )
 
-// {
-//     "Name": "John",
-//     "Password": "John123",
-//     "DateOfBirth": "1985-01-01",
-//     "Gender": "Male",
-//     "MobileNumber": 1223342345,
-//     "Specialty": "Depression Issues"
-// }
+/*
+{
+    "Name": "John",
+    "Password": "John123",
+    "DateOfBirth": "1985-01-01",
+    "Gender": "Male",
+    "MobileNumber": 1223342345,
+    "Specialty": "Depression Issues"
+}
+*/
 
 const coachesSchema = new mongoose.Schema(
     {
@@ -108,6 +111,7 @@ const coachesSchema = new mongoose.Schema(
         }
     }
 )
+
 
 
 const bookingsSchema = new mongoose.Schema(

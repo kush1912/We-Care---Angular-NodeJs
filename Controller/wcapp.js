@@ -1,7 +1,7 @@
 const db = require('../model/db');
-// const {user} = require('../model/db');
-// const {coaches} = require('../model/db');
-// const {bookings} = require('../model/db');
+const {user} = require('../model/db');
+const {coaches} = require('../model/db');
+const {bookings} = require('../model/db');
 const validators = require('../Utilities/validator')
 const helper = require('../Utilities/helper')
 
@@ -10,10 +10,10 @@ const helper = require('../Utilities/helper')
 exports.register = async(req,res) =>{
     try{
 
-        // console.log(req.body)
+        console.log(req.body)
         // Destructuring of req.body
         const {Name, Password, DateOfBirth, Gender, MobileNumber, Email, PinCode, City, State, Country} = req.body
-        
+        console.log(Email);
         if(!validators.validateName(Name))
         {
             res.status(400).json({
@@ -88,9 +88,9 @@ exports.register = async(req,res) =>{
 exports.registerAsCoach = async(req,res) =>{
     try{
 
-        //  console.log(req.body)
+        console.log(req.body)
         // Destructuring of req.body
-        const {Name, Password, DateOfBirth, Gender, MobileNumber, Specialty} = req.body
+        const {Name, Password, DateOfBirth, Gender, MobileNumber, Speciality} = req.body
         
         if(!validators.validateName(Name))
         {
@@ -126,8 +126,8 @@ exports.registerAsCoach = async(req,res) =>{
         }
 
  
-        if (!validators.validateSpeciality(Specialty)) {
-            res.status(400).json({message: "Specialty should have 10 to 50 characters"})
+        if (!validators.validateSpeciality(Speciality)) {
+            res.status(400).json({message: "Speciality should have 10 to 50 characters"})
             return
         }
         if (!validators.doesCoachNameExist(Name)){
@@ -135,8 +135,9 @@ exports.registerAsCoach = async(req,res) =>{
             return;
         }
         const CoachId = await helper.genCoachId();
+        
         await db.coaches.create({
-            CoachId,Name,Password,DateOfBirth: new Date(DateOfBirth),Gender,MobileNumber,Specialty
+            CoachId,Name,Password,DateOfBirth: new Date(DateOfBirth),Gender,MobileNumber,Speciality
         })
         res.status(200).json({
             message: `${CoachId} Created Succesfully!`,
@@ -154,14 +155,26 @@ exports.registerAsCoach = async(req,res) =>{
 exports.makeAppointment = async(req,res) =>{
     try{
         console.log(req.body)
-        const {Slot, DateOfAppointment} = req.body
-        if(validators.doesAppointmentExist(Slot, DateOfAppointment))
-        {
-            res.status(400).json({
-                message: "There is an appointment in this slot already!"
-            })
+        const {Slot, DateOfAppointment} = req.body;
+        const {userId, coachId} =req.params;
+
+        let flag = await validators.doesUserExist(userId);
+        if(!flag){
+            res.status(400).json({message: "User Id does not exist"});
             return;
         }
+
+        flag = await validators.doesCoachExist(coachId);
+        if(!flag){
+            res.status(400).json({message: "Coach Id does not exist!"});
+            return;
+        }
+
+        if(!validators.validateSlot(Slot)){
+            res.status(400).json({message:"Slot should be a valid One!"});
+            return;
+        }
+
         if(!validators.validateAppointment(DateOfAppointment))
         {
             res.status(400).json({
@@ -169,18 +182,10 @@ exports.makeAppointment = async(req,res) =>{
             })
             return;
         }
-        if(!validators.doesCoachExist(req.params.coachId))
-        {
-            res.status(400).json({
-                message: "Coach Id does not exist!",
-            })
-             return;
-        }
-        if(!validators.doesUserExist(req.params.userId))
-        {
-            res.status(400).json({
-                message: "User Id does not exist",
-            })
+
+        flag = await validators.doesAppointmentExist(DateOfAppointment);
+        if(flag){
+            res.status(400).json({message: "There is an appointment in this slot already!"});
             return;
         }
 
@@ -337,8 +342,8 @@ exports.getCoachById = async(req,res) => {
 
 exports.getUserById = async(req,res) => {
     try{
-        console.log("enter");
-        const user_details = await db.user.findOne({Userid:req.params.userId},{_id:0, __v: 0});
+        console.log(req.params.userId);
+        const user_details = await db.user.findOne({UserId:req.params.userId},{_id:0, __v: 0});
         console.log(user_details);
         if(user_details!=null){
             res.status(200).json({
@@ -369,16 +374,45 @@ exports.getUserById = async(req,res) => {
 // Study More on that findOneUpdate
 exports.reschedule = async(req,res) => {
     try{
-        booking = await db.bookings.findOneAndUpdate(
+        const {Slot,DateOfAppointment} = req.body;
+        
+        let flag = await validators.doesBookingExist(req.params.bookingId);
+        if(!flag){
+            res.status(400).json({message: "Booking does not Exist!"});
+            return;
+        }
+
+        if(!validators.validateSlot(Slot)){
+            res.status(400).json({message:"Slot should be a valid One!"});
+            return;
+        }
+
+        if(!validators.validateAppointment(DateOfAppointment))
+        {
+            res.status(400).json({
+                message: "Date should be any upcoming 7 days!",
+            })
+            return;
+        }
+
+        flag = await validators.doesAppointmentExist(DateOfAppointment);
+        if(flag){
+            res.status(400).json({message: "There is an appointment in this slot already!"});
+            return;
+        }
+
+        const result = await db.bookings.findOneAndUpdate(
             {
                 BookingId: req.params.bookingId
             },
-            req.body,
             {
-                new: true,
-                runValidators: true
-            }
-        );
+                BookingId: req.params.bookingId,
+                Slot:Slot,
+                AppointmentDate: DateOfAppointment
+            });
+        if(result){
+            res.status(200).json({message:"Booking updated!"});
+        }
     }catch(err)
     {
         console.log("Error Found in catch!");
@@ -389,12 +423,21 @@ exports.reschedule = async(req,res) => {
 }
 
 exports.cancelAppointment = async(req,res) =>{
-    console.log(req.params.bookingId);
+    //console.log(req.params.bookingId);
+    const BookingId = req.params.bookingId;
+
+    let flag = await validators.doesBookingExist(req.params.bookingId);
+    if(!flag){
+        res.status(400).json({message: "Booking does not Exist!"});
+        return;
+    }
+
     const delDet = await db.bookings.deleteOne({BookingId: req.params.bookingId});
+    console.log(delDet);
     if(delDet.deletedCount===0){
         res.status(404).json({
             status:"Failed",
-            message: "No such Booking Made!"
+            message: "Booking deletion Failed!"
         });
     }else{
         res.status(200).json({
