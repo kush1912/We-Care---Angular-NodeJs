@@ -106,7 +106,7 @@ const coachesSchema = new mongoose.Schema(
         MobileNumber: {
             type: Number,
         },
-        Specialty: {
+        Speciality: {
             type: String,
         }
     }

@@ -130,8 +130,8 @@ exports.registerAsCoach = async(req,res) =>{
             res.status(400).json({message: "Speciality should have 10 to 50 characters"})
             return
         }
-        if (!validators.doesCoachNameExist(Name)){
-            res.status(400).json({message: "Coach exists with this name"})
+        if (!validators.doesCoachNameExist(MobileNumber)){
+            res.status(400).json({message: "Coach exists with this Mobile Number"})
             return;
         }
         const CoachId = await helper.genCoachId();
@@ -170,10 +170,10 @@ exports.makeAppointment = async(req,res) =>{
             return;
         }
 
-        if(!validators.validateSlot(Slot)){
-            res.status(400).json({message:"Slot should be a valid One!"});
-            return;
-        }
+        // if(!validators.validateSlot(Slot)){
+        //     res.status(400).json({message:"Slot should be a valid One!"});
+        //     return;
+        // }
 
         if(!validators.validateAppointment(DateOfAppointment))
         {
@@ -251,8 +251,8 @@ exports.loginAsCoach = async(req,res) => {
         //console.log(req.body)
         const {CoachId, Password} = req.body;
         const doc = await db.coaches.findOne({CoachId:CoachId},{_id:0,Password:1})
-        console.log(Password);
-        console.log(doc);   /// When there is no document matching it return null (check how exist works).
+        //console.log(Password);
+        //console.log(doc);   /// When there is no document matching it return null (check how exist works).
             if(!doc)
             {
                 res.status(400).json({
@@ -325,7 +325,7 @@ exports.getCoachById = async(req,res) => {
             });
         }
         else{
-            res.status(400).json({
+            res.status(200).json({
                 status: 'success',
                 data: {
                     message: 'No coach found with that ID!'
@@ -354,8 +354,7 @@ exports.getUserById = async(req,res) => {
             });
         }
         else{
-            console.log("ent");
-            res.status(400).json({
+            res.status(200).json({
                 status: 'success',
                 data: {
                     message: 'No user found with that ID!'
@@ -382,10 +381,10 @@ exports.reschedule = async(req,res) => {
             return;
         }
 
-        if(!validators.validateSlot(Slot)){
-            res.status(400).json({message:"Slot should be a valid One!"});
-            return;
-        }
+        // if(!validators.validateSlot(Slot)){
+        //     res.status(400).json({message:"Slot should be a valid One!"});
+        //     return;
+        // }
 
         if(!validators.validateAppointment(DateOfAppointment))
         {
@@ -460,7 +459,7 @@ exports.appointmentsByUserId =async(req,res) => {
             });
         }
         else{
-            res.status(400).json({
+            res.status(200).json({
                 status: 'success',
                 data: {
                     message: 'No Bookings found with that ID!'
@@ -478,6 +477,7 @@ exports.appointmentsByUserId =async(req,res) => {
 exports.appointmentsByCoachId = async(req,res) => {
     try{
         const coach_appointments = await db.bookings.find({CoachId:req.params.coachId},{_id: 0, __v: 0});
+        console.log(coach_appointments);
         if(coach_appointments.length>0){
             res.status(200).json({
                 results: coach_appointments.length,
@@ -488,7 +488,7 @@ exports.appointmentsByCoachId = async(req,res) => {
             });
         }
         else{
-            res.status(400).json({
+            res.status(200).json({
                 status: 'success',
                 data: {
                     message: 'No Bookings found with that ID!'
