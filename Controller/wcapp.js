@@ -57,7 +57,7 @@ exports.register = async(req,res) =>{
             return
         }
         if (!validators.validateAddress(City) || !validators.validateAddress(State) || !validators.validateAddress(Country)) {
-            res.status(200).json({message: "City, State, Country should have minimum 3 and maximum 20 characters"})
+            res.status(200).json({message: "City, nState, Country should have minimum 3 and maximum 20 characters"})
             return
         }
         const flag = await db.user.find({Email:Email}).count();
