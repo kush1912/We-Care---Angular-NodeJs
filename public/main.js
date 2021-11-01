@@ -2456,7 +2456,7 @@ function CoachHomeComponent_div_1_Template(rf, ctx) { if (rf & 1) {
 function CoachHomeComponent_div_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "No bookings found for this coach");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "You don't have any bookings!");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
