@@ -23,7 +23,5 @@ router.put('/booking/:bookingId', myController.reschedule);
 // // Delete Requests
 router.delete('/booking/:bookingId', myController.cancelAppointment);
 
-// All Requests
-router.all('*', myController.invalidUrl);
 
 module.exports = router;

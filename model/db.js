@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
-
-const url = 'mongodb://localhost:27017/wecare';
-mongoose.connect(url,{
+require('dotenv').config();
+//const url = 'mongodb://localhost:27017/wecare';
+const mongoUrl=process.env.MONGODB_CONNECTION_STRING;
+// console.log(mongoUrl);
+mongoose.connect(mongoUrl,{
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,

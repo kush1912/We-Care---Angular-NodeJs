@@ -505,8 +505,10 @@ exports.appointmentsByCoachId = async(req,res) => {
 }
 
 exports.invalidUrl = async(req,res,next) => {
+    
     const err = new Error();
     err.message = "Please enter a valid Url!";
     err.status = 404;
+    console.log(err);
     next(err);
 }
