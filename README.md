@@ -12,3 +12,5 @@ WeCare is an online Life Coaching application that helps its users to sign up an
 1. Use npm install command to get all the required packages downloaded.
 2. Use npm run server to start the json-server at 8080.
 3. Start the angular application using ng serve.
+
+Link: https://glacial-bastion-59144.herokuapp.com/
