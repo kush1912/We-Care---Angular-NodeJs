@@ -298,13 +298,13 @@ class HomeComponent {
         this.route = route;
     }
     handleCoachLogin() {
-        this.route.navigate(['/coachLogin']);
+        this.route.navigate(['/coachLogin'], { skipLocationChange: true });
     }
     handleCoachSignup() {
-        this.route.navigate(['/coachSignup']);
+        this.route.navigate(['/coachSignup'], { skipLocationChange: true });
     }
     handleUserLogin() {
-        this.route.navigate(['/userLogin']);
+        this.route.navigate(['/userLogin'], { skipLocationChange: true });
     }
     handleUserSignup() {
         this.route.navigate(['/userSignup']);
@@ -537,7 +537,7 @@ class RescheduleAppointmentComponent {
         this.service.rescheduleBookings(this.appointmentForm.value, bookingId).subscribe(data => this.booked = true, err => console.log(err));
     }
     goBack() {
-        this.route.navigate(['/userHome']);
+        this.route.navigate(['/userHome'], { skipLocationChange: true });
     }
 }
 RescheduleAppointmentComponent.ɵfac = function RescheduleAppointmentComponent_Factory(t) { return new (t || RescheduleAppointmentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_4__["WeCareService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_5__["DataSharingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"])); };
@@ -790,7 +790,7 @@ class CoachSignupComponent {
         });
     }
     handleCoachLogin() {
-        this.route.navigate(['/coachLogin']);
+        this.route.navigate(['/coachLogin'], { skipLocationChange: true });
     }
 }
 CoachSignupComponent.ɵfac = function CoachSignupComponent_Factory(t) { return new (t || CoachSignupComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_4__["WeCareService"])); };
@@ -839,14 +839,14 @@ class HeaderCoachComponent {
     ngOnInit() {
     }
     coachSchedules() {
-        this.route.navigate(['/coachHome']);
+        this.route.navigate(['/coachHome'], { skipLocationChange: true });
     }
     coachViewProfile() {
-        this.route.navigate(['/coachProfile']);
+        this.route.navigate(['/coachProfile'], { skipLocationChange: true });
     }
     logout() {
         localStorage.setItem("coachId", '');
-        this.route.navigate(['/home']);
+        this.route.navigate(['/home'], { skipLocationChange: true });
     }
 }
 HeaderCoachComponent.ɵfac = function HeaderCoachComponent_Factory(t) { return new (t || HeaderCoachComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
@@ -1069,7 +1069,7 @@ class BookAppointmentComponent {
         });
     }
     goBack() {
-        this.route.navigate(['/userHome']);
+        this.route.navigate(['/userHome'], { skipLocationChange: true });
     }
 }
 BookAppointmentComponent.ɵfac = function BookAppointmentComponent_Factory(t) { return new (t || BookAppointmentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_4__["WeCareService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_5__["DataSharingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"])); };
@@ -1194,7 +1194,7 @@ class UserLoginComponent {
             this.isAuthenticated = true;
             localStorage.setItem("userId", this.userLoginForm.value.UserId);
             //this.dataService.setUserId(this.userLoginForm.value.UserId);
-            this.route.navigate(['/userHome']);
+            this.route.navigate(['/userHome'], { skipLocationChange: true });
         }, error => {
             this.isAuthenticated = false;
         });
@@ -1352,7 +1352,7 @@ class UserHomeComponent {
         console.log(coachId);
         localStorage.setItem("coachId", coachId);
         //this.dataService.setCoachId(coachId);
-        this.route.navigate(['/bookAppointment']);
+        this.route.navigate(['/bookAppointment'], { skipLocationChange: true });
     }
 }
 UserHomeComponent.ɵfac = function UserHomeComponent_Factory(t) { return new (t || UserHomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_2__["WeCareService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_3__["DataSharingService"])); };
@@ -1523,8 +1523,8 @@ __webpack_require__.r(__webpack_exports__);
 
 class WeCareMappingService {
     constructor() {
-        // private readonly BASE_URL = '';
-        this.BASE_URL = '';
+        this.BASE_URL = 'http://localhost:8080/';
+        //private readonly BASE_URL = '';
         this.REG_USER = 'users';
         this.LOGIN_USER = 'users/login';
         this.REG_COACH = 'coaches';
@@ -1682,7 +1682,7 @@ class CoachLoginComponent {
                 this.isAuthenticated = true;
                 //this.dataService.setCoachId(this.coachLoginForm.value.CoachId);
                 localStorage.setItem("coachId", this.coachLoginForm.value.CoachId);
-                this.route.navigate(['/coachHome']);
+                this.route.navigate(['/coachHome'], { skipLocationChange: true });
             }
         }, error => {
             this.isAuthenticated = false;
@@ -2037,7 +2037,7 @@ class UserSignupComponent {
         });
     }
     handleUserLogin() {
-        this.route.navigate(['/userLogin']);
+        this.route.navigate(['/userLogin'], { skipLocationChange: true });
     }
 }
 UserSignupComponent.ɵfac = function UserSignupComponent_Factory(t) { return new (t || UserSignupComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_4__["WeCareService"])); };
@@ -2184,16 +2184,16 @@ class HeaderUserComponent {
     ngOnInit() {
     }
     userViewProfile() {
-        this.route.navigate(['/userProfile']);
+        this.route.navigate(['/userProfile'], { skipLocationChange: true });
     }
     userAppointments() {
-        this.route.navigate(['/userAppointments']);
+        this.route.navigate(['/userAppointments'], { skipLocationChange: true });
     }
     logout() {
         localStorage.setItem("userId", '');
         localStorage.setItem("coachId", '');
         localStorage.setItem("bookingId", '');
-        this.route.navigate(['/home']);
+        this.route.navigate(['/home'], { skipLocationChange: true });
     }
 }
 HeaderUserComponent.ɵfac = function HeaderUserComponent_Factory(t) { return new (t || HeaderUserComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
@@ -2351,7 +2351,7 @@ class UserAppointmentComponent {
     rescheduleAppointment(bookingId) {
         localStorage.setItem("bookingId", bookingId);
         //this.dataService.setBookingId(bookingId);
-        this.route.navigate(['/rescheduleAppointment']);
+        this.route.navigate(['/rescheduleAppointment'], { skipLocationChange: true });
     }
     deleteAppointment(bookingId) {
         const flag = confirm("Do you really want to delete the appointment?");
@@ -2362,7 +2362,7 @@ class UserAppointmentComponent {
         }
     }
     goBack() {
-        this.route.navigate(['/userHome']);
+        this.route.navigate(['/userHome'], { skipLocationChange: true });
     }
 }
 UserAppointmentComponent.ɵfac = function UserAppointmentComponent_Factory(t) { return new (t || UserAppointmentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_2__["WeCareService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_3__["DataSharingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"])); };
@@ -2540,7 +2540,7 @@ class UserProfileComponent {
         this.service.getUserProfile(this.userId).subscribe((data) => this.data = data.data['user_details'], err => console.log(err));
     }
     goBack() {
-        this.route.navigate(['/userHome']);
+        this.route.navigate(['/userHome'], { skipLocationChange: true });
     }
 }
 UserProfileComponent.ɵfac = function UserProfileComponent_Factory(t) { return new (t || UserProfileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_3__["WeCareService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_4__["DataSharingService"])); };
