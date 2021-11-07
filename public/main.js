@@ -276,6 +276,51 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
 
 /***/ }),
 
+/***/ "6xIf":
+/*!*************************************!*\
+  !*** ./src/app/coach-auth.guard.ts ***!
+  \*************************************/
+/*! exports provided: CoachAuthGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoachAuthGuard", function() { return CoachAuthGuard; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
+
+
+
+class CoachAuthGuard {
+    constructor(route) {
+        this.route = route;
+    }
+    canActivate(route, state) {
+        this.isCoachAuth = String(localStorage.getItem('isCoachAuth'));
+        debugger;
+        if (this.isCoachAuth == "true") {
+            console.log("Coach is allowed!");
+            return true;
+        }
+        else {
+            window.alert("You don't have permission to view this page");
+            this.route.navigate(['/home']);
+            return false;
+        }
+    }
+}
+CoachAuthGuard.ɵfac = function CoachAuthGuard_Factory(t) { return new (t || CoachAuthGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
+CoachAuthGuard.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: CoachAuthGuard, factory: CoachAuthGuard.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CoachAuthGuard, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "9vUh":
 /*!****************************************!*\
   !*** ./src/app/home/home.component.ts ***!
@@ -844,6 +889,7 @@ class HeaderCoachComponent {
     }
     logout() {
         localStorage.setItem("coachId", '');
+        localStorage.setItem("isCoachAuth", '');
         this.route.navigate(['/home'], { skipLocationChange: true });
     }
 }
@@ -1114,8 +1160,17 @@ class AppComponent {
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
-AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 1, vars: 0, template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 7, vars: 0, consts: [[1, "footer"], [2, "color", "red"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "router-outlet");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "footer", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h6");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Made with ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "\u2764");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, " by @Ajay Kushwaha");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LmNzcyJ9 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -1146,6 +1201,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./book-appointment/book-appointment.component */ "SRIP");
 /* harmony import */ var _user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user-appointment/user-appointment.component */ "nXsA");
 /* harmony import */ var _reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reschedule-appointment/reschedule-appointment.component */ "D8YL");
+/* harmony import */ var _user_auth_guard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../user-auth.guard */ "c7tb");
+
 
 
 
@@ -1156,12 +1213,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const userRoutes = [
-    { path: "userHome", component: _user_home_component__WEBPACK_IMPORTED_MODULE_2__["UserHomeComponent"] },
-    { path: "userProfile", component: _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_3__["UserProfileComponent"] },
-    { path: "bookAppointment", component: _book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_4__["BookAppointmentComponent"] },
-    { path: "userAppointments", component: _user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_5__["UserAppointmentComponent"] },
-    { path: "rescheduleAppointment", component: _reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_6__["RescheduleAppointmentComponent"] },
-    { path: "userViewProfile", component: _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_3__["UserProfileComponent"] },
+    { path: "userHome", component: _user_home_component__WEBPACK_IMPORTED_MODULE_2__["UserHomeComponent"], canActivate: [_user_auth_guard__WEBPACK_IMPORTED_MODULE_7__["UserAuthGuard"]] },
+    { path: "userProfile", component: _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_3__["UserProfileComponent"], canActivate: [_user_auth_guard__WEBPACK_IMPORTED_MODULE_7__["UserAuthGuard"]] },
+    { path: "bookAppointment", component: _book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_4__["BookAppointmentComponent"], canActivate: [_user_auth_guard__WEBPACK_IMPORTED_MODULE_7__["UserAuthGuard"]] },
+    { path: "userAppointments", component: _user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_5__["UserAppointmentComponent"], canActivate: [_user_auth_guard__WEBPACK_IMPORTED_MODULE_7__["UserAuthGuard"]] },
+    { path: "rescheduleAppointment", component: _reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_6__["RescheduleAppointmentComponent"], canActivate: [_user_auth_guard__WEBPACK_IMPORTED_MODULE_7__["UserAuthGuard"]] },
+    { path: "userViewProfile", component: _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_3__["UserProfileComponent"], canActivate: [_user_auth_guard__WEBPACK_IMPORTED_MODULE_7__["UserAuthGuard"]] },
 ];
 class UserRoutingModule {
 }
@@ -1238,6 +1295,7 @@ class UserLoginComponent {
         this.dataService.setUserId(this.userLoginForm.value.UserId);
         this.service.loginUser(this.userLoginForm.value).subscribe(result => {
             this.isAuthenticated = true;
+            localStorage.setItem('isUserAuth', 'true');
             localStorage.setItem("userId", this.userLoginForm.value.UserId);
             //this.dataService.setUserId(this.userLoginForm.value.UserId);
             this.route.navigate(['/users/userHome'], { skipLocationChange: true });
@@ -1317,8 +1375,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoachRoutingModule", function() { return CoachRoutingModule; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _coach_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./coach-home.component */ "okYT");
-/* harmony import */ var _coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./coach-profile/coach-profile.component */ "lBVW");
+/* harmony import */ var _coach_auth_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../coach-auth.guard */ "6xIf");
+/* harmony import */ var _coach_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./coach-home.component */ "okYT");
+/* harmony import */ var _coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./coach-profile/coach-profile.component */ "lBVW");
+
 
 
 
@@ -1326,8 +1386,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const coachRoutes = [
-    { path: "coachHome", component: _coach_home_component__WEBPACK_IMPORTED_MODULE_2__["CoachHomeComponent"] },
-    { path: "coachProfile", component: _coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_3__["CoachProfileComponent"] },
+    { path: "coachHome", component: _coach_home_component__WEBPACK_IMPORTED_MODULE_3__["CoachHomeComponent"], canActivate: [_coach_auth_guard__WEBPACK_IMPORTED_MODULE_2__["CoachAuthGuard"]] },
+    { path: "coachProfile", component: _coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_4__["CoachProfileComponent"], canActivate: [_coach_auth_guard__WEBPACK_IMPORTED_MODULE_2__["CoachAuthGuard"]] },
 ];
 class CoachRoutingModule {
 }
@@ -1715,6 +1775,51 @@ UserModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
 
 /***/ }),
 
+/***/ "c7tb":
+/*!************************************!*\
+  !*** ./src/app/user-auth.guard.ts ***!
+  \************************************/
+/*! exports provided: UserAuthGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserAuthGuard", function() { return UserAuthGuard; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
+
+
+
+class UserAuthGuard {
+    constructor(route) {
+        this.route = route;
+    }
+    canActivate(route, state) {
+        this.isAuthAuth = String(localStorage.getItem('isCoachAuth'));
+        debugger;
+        if (this.isAuthAuth == "true") {
+            console.log("User is allowed!");
+            return true;
+        }
+        else {
+            window.alert("You don't have permission to view this page");
+            this.route.navigate(['/home']);
+            return false;
+        }
+    }
+}
+UserAuthGuard.ɵfac = function UserAuthGuard_Factory(t) { return new (t || UserAuthGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
+UserAuthGuard.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: UserAuthGuard, factory: UserAuthGuard.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserAuthGuard, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "eLiZ":
 /*!********************************************!*\
   !*** ./src/app/we-care-mapping.service.ts ***!
@@ -1887,6 +1992,7 @@ class CoachLoginComponent {
         this.service.loginCoach(this.coachLoginForm.value).subscribe(result => {
             if (result) {
                 this.isAuthenticated = true;
+                localStorage.setItem("isCoachAuth", "true");
                 //this.dataService.setCoachId(this.coachLoginForm.value.CoachId);
                 localStorage.setItem("coachId", this.coachLoginForm.value.CoachId);
                 this.route.navigate(['/coaches/coachHome'], { skipLocationChange: true });
@@ -2398,6 +2504,8 @@ class HeaderUserComponent {
         localStorage.setItem("userId", '');
         localStorage.setItem("coachId", '');
         localStorage.setItem("bookingId", '');
+        localStorage.setItem("isUserAuth", '');
+        ;
         this.route.navigate(['/home'], { skipLocationChange: true });
     }
 }
