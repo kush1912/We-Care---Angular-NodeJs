@@ -57,7 +57,7 @@ DataSharingService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\kushvina\Desktop\We Care\We-Care---Angular-NodeJs\Frontend\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! C:\Users\kushvina\Desktop\We Care\We-Care---Angular-NodeJs\frontend\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -407,9 +407,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _we_care_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../we-care.service */ "2Ftl");
 /* harmony import */ var _Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Shared/data-sharing.service */ "/qIS");
-/* harmony import */ var _header_user_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../header-user.component */ "lyCO");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "ofXK");
-
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
 
@@ -537,7 +535,7 @@ class RescheduleAppointmentComponent {
         this.service.rescheduleBookings(this.appointmentForm.value, bookingId).subscribe(data => this.booked = true, err => console.log(err));
     }
     goBack() {
-        this.route.navigate(['/userHome'], { skipLocationChange: true });
+        this.route.navigate(['/users/userHome'], { skipLocationChange: true });
     }
 }
 RescheduleAppointmentComponent.ɵfac = function RescheduleAppointmentComponent_Factory(t) { return new (t || RescheduleAppointmentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_4__["WeCareService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_5__["DataSharingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"])); };
@@ -552,7 +550,7 @@ RescheduleAppointmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0_
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.booked);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.booked);
-    } }, directives: [_header_user_component__WEBPACK_IMPORTED_MODULE_6__["HeaderUserComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["RadioControlValueAccessor"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyZXNjaGVkdWxlLWFwcG9pbnRtZW50LmNvbXBvbmVudC5jc3MifQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["RadioControlValueAccessor"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyZXNjaGVkdWxlLWFwcG9pbnRtZW50LmNvbXBvbmVudC5jc3MifQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RescheduleAppointmentComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -839,10 +837,10 @@ class HeaderCoachComponent {
     ngOnInit() {
     }
     coachSchedules() {
-        this.route.navigate(['/coachHome'], { skipLocationChange: true });
+        this.route.navigate(['/coaches/coachHome'], { skipLocationChange: true });
     }
     coachViewProfile() {
-        this.route.navigate(['/coachProfile'], { skipLocationChange: true });
+        this.route.navigate(['/coaches/coachProfile'], { skipLocationChange: true });
     }
     logout() {
         localStorage.setItem("coachId", '');
@@ -935,9 +933,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _we_care_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../we-care.service */ "2Ftl");
 /* harmony import */ var _Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Shared/data-sharing.service */ "/qIS");
-/* harmony import */ var _header_user_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../header-user.component */ "lyCO");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "ofXK");
-
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
 
@@ -1069,7 +1065,7 @@ class BookAppointmentComponent {
         });
     }
     goBack() {
-        this.route.navigate(['/userHome'], { skipLocationChange: true });
+        this.route.navigate(['/users/userHome'], { skipLocationChange: true });
     }
 }
 BookAppointmentComponent.ɵfac = function BookAppointmentComponent_Factory(t) { return new (t || BookAppointmentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_4__["WeCareService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_5__["DataSharingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"])); };
@@ -1084,7 +1080,7 @@ BookAppointmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.booked);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.booked);
-    } }, directives: [_header_user_component__WEBPACK_IMPORTED_MODULE_6__["HeaderUserComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["RadioControlValueAccessor"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJib29rLWFwcG9pbnRtZW50LmNvbXBvbmVudC5jc3MifQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["RadioControlValueAccessor"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJib29rLWFwcG9pbnRtZW50LmNvbXBvbmVudC5jc3MifQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](BookAppointmentComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1127,6 +1123,56 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
                 selector: 'app-root',
                 templateUrl: './app.component.html',
                 styleUrls: ['./app.component.css']
+            }]
+    }], null, null); })();
+
+
+/***/ }),
+
+/***/ "TuFy":
+/*!**************************************************!*\
+  !*** ./src/app/user-home/user-routing.module.ts ***!
+  \**************************************************/
+/*! exports provided: UserRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserRoutingModule", function() { return UserRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _user_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-home.component */ "Yq+j");
+/* harmony import */ var _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user-profile/user-profile.component */ "rFBD");
+/* harmony import */ var _book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./book-appointment/book-appointment.component */ "SRIP");
+/* harmony import */ var _user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user-appointment/user-appointment.component */ "nXsA");
+/* harmony import */ var _reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reschedule-appointment/reschedule-appointment.component */ "D8YL");
+
+
+
+
+
+
+
+
+
+const userRoutes = [
+    { path: "userHome", component: _user_home_component__WEBPACK_IMPORTED_MODULE_2__["UserHomeComponent"] },
+    { path: "userProfile", component: _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_3__["UserProfileComponent"] },
+    { path: "bookAppointment", component: _book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_4__["BookAppointmentComponent"] },
+    { path: "userAppointments", component: _user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_5__["UserAppointmentComponent"] },
+    { path: "rescheduleAppointment", component: _reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_6__["RescheduleAppointmentComponent"] },
+    { path: "userViewProfile", component: _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_3__["UserProfileComponent"] },
+];
+class UserRoutingModule {
+}
+UserRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: UserRoutingModule });
+UserRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function UserRoutingModule_Factory(t) { return new (t || UserRoutingModule)(); }, imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(userRoutes)], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](UserRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserRoutingModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+                imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(userRoutes)],
+                exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
             }]
     }], null, null); })();
 
@@ -1194,7 +1240,7 @@ class UserLoginComponent {
             this.isAuthenticated = true;
             localStorage.setItem("userId", this.userLoginForm.value.UserId);
             //this.dataService.setUserId(this.userLoginForm.value.UserId);
-            this.route.navigate(['/userHome'], { skipLocationChange: true });
+            this.route.navigate(['/users/userHome'], { skipLocationChange: true });
         }, error => {
             this.isAuthenticated = false;
         });
@@ -1259,6 +1305,46 @@ UserLoginComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
 
 /***/ }),
 
+/***/ "Y4Wd":
+/*!****************************************************!*\
+  !*** ./src/app/coach-home/coach-routing.module.ts ***!
+  \****************************************************/
+/*! exports provided: CoachRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoachRoutingModule", function() { return CoachRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _coach_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./coach-home.component */ "okYT");
+/* harmony import */ var _coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./coach-profile/coach-profile.component */ "lBVW");
+
+
+
+
+
+
+const coachRoutes = [
+    { path: "coachHome", component: _coach_home_component__WEBPACK_IMPORTED_MODULE_2__["CoachHomeComponent"] },
+    { path: "coachProfile", component: _coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_3__["CoachProfileComponent"] },
+];
+class CoachRoutingModule {
+}
+CoachRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: CoachRoutingModule });
+CoachRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function CoachRoutingModule_Factory(t) { return new (t || CoachRoutingModule)(); }, imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(coachRoutes)], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](CoachRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CoachRoutingModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+                imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(coachRoutes)],
+                exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+            }]
+    }], null, null); })();
+
+
+/***/ }),
+
 /***/ "Yq+j":
 /*!**************************************************!*\
   !*** ./src/app/user-home/user-home.component.ts ***!
@@ -1273,9 +1359,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _we_care_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../we-care.service */ "2Ftl");
 /* harmony import */ var _Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Shared/data-sharing.service */ "/qIS");
-/* harmony import */ var _header_user_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../header-user.component */ "lyCO");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
-
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
 
@@ -1352,7 +1436,7 @@ class UserHomeComponent {
         console.log(coachId);
         localStorage.setItem("coachId", coachId);
         //this.dataService.setCoachId(coachId);
-        this.route.navigate(['/bookAppointment'], { skipLocationChange: true });
+        this.route.navigate(['/users/bookAppointment']);
     }
 }
 UserHomeComponent.ɵfac = function UserHomeComponent_Factory(t) { return new (t || UserHomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_2__["WeCareService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_3__["DataSharingService"])); };
@@ -1369,7 +1453,7 @@ UserHomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.coaches);
-    } }, directives: [_header_user_component__WEBPACK_IMPORTED_MODULE_4__["HeaderUserComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitchCase"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1c2VyLWhvbWUuY29tcG9uZW50LmNzcyJ9 */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgSwitchCase"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1c2VyLWhvbWUuY29tcG9uZW50LmNzcyJ9 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserHomeComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1405,19 +1489,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _we_care_mapping_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./we-care-mapping.service */ "eLiZ");
 /* harmony import */ var _we_care_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./we-care.service */ "2Ftl");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
-/* harmony import */ var _coach_home_coach_home_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./coach-home/coach-home.component */ "okYT");
-/* harmony import */ var _user_home_user_home_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./user-home/user-home.component */ "Yq+j");
-/* harmony import */ var _coach_home_coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./coach-home/coach-profile/coach-profile.component */ "lBVW");
-/* harmony import */ var _user_home_user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./user-home/user-profile/user-profile.component */ "rFBD");
-/* harmony import */ var _user_home_book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./user-home/book-appointment/book-appointment.component */ "SRIP");
-/* harmony import */ var _user_home_user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./user-home/user-appointment/user-appointment.component */ "nXsA");
-/* harmony import */ var _user_home_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./user-home/reschedule-appointment/reschedule-appointment.component */ "D8YL");
-/* harmony import */ var _header_coach_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./header-coach.component */ "Pmgu");
-/* harmony import */ var _header_user_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./header-user.component */ "lyCO");
-/* harmony import */ var _header_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./header.component */ "5hGD");
-
-
-
+/* harmony import */ var _header_coach_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./header-coach.component */ "Pmgu");
+/* harmony import */ var _header_user_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./header-user.component */ "lyCO");
+/* harmony import */ var _header_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./header.component */ "5hGD");
+/* harmony import */ var _user_home_user_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./user-home/user.module */ "b0Bv");
+/* harmony import */ var _user_home_user_routing_module__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./user-home/user-routing.module */ "TuFy");
+/* harmony import */ var _coach_home_coach_module__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./coach-home/coach.module */ "ZxLq");
+/* harmony import */ var _coach_home_coach_routing_module__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./coach-home/coach-routing.module */ "Y4Wd");
 
 
 
@@ -1449,7 +1527,11 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"]
+            _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"],
+            _user_home_user_module__WEBPACK_IMPORTED_MODULE_16__["UserModule"],
+            _user_home_user_routing_module__WEBPACK_IMPORTED_MODULE_17__["UserRoutingModule"],
+            _coach_home_coach_module__WEBPACK_IMPORTED_MODULE_18__["CoachModule"],
+            _coach_home_coach_routing_module__WEBPACK_IMPORTED_MODULE_19__["CoachRoutingModule"]
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
         _home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"],
@@ -1457,19 +1539,16 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _user_signup_user_signup_component__WEBPACK_IMPORTED_MODULE_7__["UserSignupComponent"],
         _user_login_user_login_component__WEBPACK_IMPORTED_MODULE_8__["UserLoginComponent"],
         _coach_login_coach_login_component__WEBPACK_IMPORTED_MODULE_9__["CoachLoginComponent"],
-        _coach_home_coach_home_component__WEBPACK_IMPORTED_MODULE_13__["CoachHomeComponent"],
-        _user_home_user_home_component__WEBPACK_IMPORTED_MODULE_14__["UserHomeComponent"],
-        _coach_home_coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_15__["CoachProfileComponent"],
-        _user_home_user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_16__["UserProfileComponent"],
-        _user_home_book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_17__["BookAppointmentComponent"],
-        _user_home_user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_18__["UserAppointmentComponent"],
-        _user_home_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_19__["RescheduleAppointmentComponent"],
-        _header_user_component__WEBPACK_IMPORTED_MODULE_21__["HeaderUserComponent"],
-        _header_coach_component__WEBPACK_IMPORTED_MODULE_20__["HeaderCoachComponent"],
-        _header_component__WEBPACK_IMPORTED_MODULE_22__["HeaderComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _header_user_component__WEBPACK_IMPORTED_MODULE_14__["HeaderUserComponent"],
+        _header_coach_component__WEBPACK_IMPORTED_MODULE_13__["HeaderCoachComponent"],
+        _header_component__WEBPACK_IMPORTED_MODULE_15__["HeaderComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-        _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"]] }); })();
+        _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"],
+        _user_home_user_module__WEBPACK_IMPORTED_MODULE_16__["UserModule"],
+        _user_home_user_routing_module__WEBPACK_IMPORTED_MODULE_17__["UserRoutingModule"],
+        _coach_home_coach_module__WEBPACK_IMPORTED_MODULE_18__["CoachModule"],
+        _coach_home_coach_routing_module__WEBPACK_IMPORTED_MODULE_19__["CoachRoutingModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -1480,28 +1559,156 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _user_signup_user_signup_component__WEBPACK_IMPORTED_MODULE_7__["UserSignupComponent"],
                     _user_login_user_login_component__WEBPACK_IMPORTED_MODULE_8__["UserLoginComponent"],
                     _coach_login_coach_login_component__WEBPACK_IMPORTED_MODULE_9__["CoachLoginComponent"],
-                    _coach_home_coach_home_component__WEBPACK_IMPORTED_MODULE_13__["CoachHomeComponent"],
-                    _user_home_user_home_component__WEBPACK_IMPORTED_MODULE_14__["UserHomeComponent"],
-                    _coach_home_coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_15__["CoachProfileComponent"],
-                    _user_home_user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_16__["UserProfileComponent"],
-                    _user_home_book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_17__["BookAppointmentComponent"],
-                    _user_home_user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_18__["UserAppointmentComponent"],
-                    _user_home_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_19__["RescheduleAppointmentComponent"],
-                    _header_user_component__WEBPACK_IMPORTED_MODULE_21__["HeaderUserComponent"],
-                    _header_coach_component__WEBPACK_IMPORTED_MODULE_20__["HeaderCoachComponent"],
-                    _header_component__WEBPACK_IMPORTED_MODULE_22__["HeaderComponent"]
+                    _header_user_component__WEBPACK_IMPORTED_MODULE_14__["HeaderUserComponent"],
+                    _header_coach_component__WEBPACK_IMPORTED_MODULE_13__["HeaderCoachComponent"],
+                    _header_component__WEBPACK_IMPORTED_MODULE_15__["HeaderComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                     _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                     _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"]
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"],
+                    _user_home_user_module__WEBPACK_IMPORTED_MODULE_16__["UserModule"],
+                    _user_home_user_routing_module__WEBPACK_IMPORTED_MODULE_17__["UserRoutingModule"],
+                    _coach_home_coach_module__WEBPACK_IMPORTED_MODULE_18__["CoachModule"],
+                    _coach_home_coach_routing_module__WEBPACK_IMPORTED_MODULE_19__["CoachRoutingModule"]
                 ],
                 providers: [
                     _we_care_service__WEBPACK_IMPORTED_MODULE_11__["WeCareService"],
                     _we_care_mapping_service__WEBPACK_IMPORTED_MODULE_10__["WeCareMappingService"]
                 ],
-                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
+                schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["CUSTOM_ELEMENTS_SCHEMA"]]
+            }]
+    }], null, null); })();
+
+
+/***/ }),
+
+/***/ "ZxLq":
+/*!********************************************!*\
+  !*** ./src/app/coach-home/coach.module.ts ***!
+  \********************************************/
+/*! exports provided: CoachModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoachModule", function() { return CoachModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _coach_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./coach-home.component */ "okYT");
+/* harmony import */ var _coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./coach-profile/coach-profile.component */ "lBVW");
+/* harmony import */ var _coach_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./coach-routing.module */ "Y4Wd");
+
+
+
+
+
+
+
+
+class CoachModule {
+}
+CoachModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: CoachModule });
+CoachModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function CoachModule_Factory(t) { return new (t || CoachModule)(); }, imports: [[
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+            _coach_routing_module__WEBPACK_IMPORTED_MODULE_6__["CoachRoutingModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
+        ]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](CoachModule, { declarations: [_coach_home_component__WEBPACK_IMPORTED_MODULE_4__["CoachHomeComponent"],
+        _coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_5__["CoachProfileComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+        _coach_routing_module__WEBPACK_IMPORTED_MODULE_6__["CoachRoutingModule"],
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CoachModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+                imports: [
+                    _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                    _coach_routing_module__WEBPACK_IMPORTED_MODULE_6__["CoachRoutingModule"],
+                    _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
+                ],
+                declarations: [
+                    _coach_home_component__WEBPACK_IMPORTED_MODULE_4__["CoachHomeComponent"],
+                    _coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_5__["CoachProfileComponent"]
+                ],
+                schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["CUSTOM_ELEMENTS_SCHEMA"]]
+            }]
+    }], null, null); })();
+
+
+/***/ }),
+
+/***/ "b0Bv":
+/*!******************************************!*\
+  !*** ./src/app/user-home/user.module.ts ***!
+  \******************************************/
+/*! exports provided: UserModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserModule", function() { return UserModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _user_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user-home.component */ "Yq+j");
+/* harmony import */ var _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user-profile/user-profile.component */ "rFBD");
+/* harmony import */ var _book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./book-appointment/book-appointment.component */ "SRIP");
+/* harmony import */ var _user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user-appointment/user-appointment.component */ "nXsA");
+/* harmony import */ var _reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./reschedule-appointment/reschedule-appointment.component */ "D8YL");
+/* harmony import */ var _user_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./user-routing.module */ "TuFy");
+
+
+
+
+
+
+
+
+
+
+
+class UserModule {
+}
+UserModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: UserModule });
+UserModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function UserModule_Factory(t) { return new (t || UserModule)(); }, imports: [[
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+            _user_routing_module__WEBPACK_IMPORTED_MODULE_9__["UserRoutingModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
+        ]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](UserModule, { declarations: [_user_home_component__WEBPACK_IMPORTED_MODULE_4__["UserHomeComponent"],
+        _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_5__["UserProfileComponent"],
+        _book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_6__["BookAppointmentComponent"],
+        _user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_7__["UserAppointmentComponent"],
+        _reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_8__["RescheduleAppointmentComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+        _user_routing_module__WEBPACK_IMPORTED_MODULE_9__["UserRoutingModule"],
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+                imports: [
+                    _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                    _user_routing_module__WEBPACK_IMPORTED_MODULE_9__["UserRoutingModule"],
+                    _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
+                ],
+                declarations: [
+                    _user_home_component__WEBPACK_IMPORTED_MODULE_4__["UserHomeComponent"],
+                    _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_5__["UserProfileComponent"],
+                    _book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_6__["BookAppointmentComponent"],
+                    _user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_7__["UserAppointmentComponent"],
+                    _reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_8__["RescheduleAppointmentComponent"],
+                ],
+                schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["CUSTOM_ELEMENTS_SCHEMA"]]
             }]
     }], null, null); })();
 
@@ -1682,7 +1889,7 @@ class CoachLoginComponent {
                 this.isAuthenticated = true;
                 //this.dataService.setCoachId(this.coachLoginForm.value.CoachId);
                 localStorage.setItem("coachId", this.coachLoginForm.value.CoachId);
-                this.route.navigate(['/coachHome'], { skipLocationChange: true });
+                this.route.navigate(['/coaches/coachHome'], { skipLocationChange: true });
             }
         }, error => {
             this.isAuthenticated = false;
@@ -2077,9 +2284,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _we_care_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../we-care.service */ "2Ftl");
-/* harmony import */ var _header_coach_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../header-coach.component */ "Pmgu");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
-
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
 
@@ -2149,7 +2354,7 @@ CoachProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("DOB: ", ctx.data.DateOfBirth.substr(0, 10), "");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Contact: ", ctx.data.MobileNumber, "");
-    } }, directives: [_header_coach_component__WEBPACK_IMPORTED_MODULE_3__["HeaderCoachComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgSwitchCase"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjb2FjaC1wcm9maWxlLmNvbXBvbmVudC5jc3MifQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgSwitchCase"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjb2FjaC1wcm9maWxlLmNvbXBvbmVudC5jc3MifQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CoachProfileComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -2184,10 +2389,10 @@ class HeaderUserComponent {
     ngOnInit() {
     }
     userViewProfile() {
-        this.route.navigate(['/userProfile'], { skipLocationChange: true });
+        this.route.navigate(['/users/userProfile'], { skipLocationChange: true });
     }
     userAppointments() {
-        this.route.navigate(['/userAppointments'], { skipLocationChange: true });
+        this.route.navigate(['/users/userAppointments'], { skipLocationChange: true });
     }
     logout() {
         localStorage.setItem("userId", '');
@@ -2281,9 +2486,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _we_care_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../we-care.service */ "2Ftl");
 /* harmony import */ var _Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Shared/data-sharing.service */ "/qIS");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
-/* harmony import */ var _header_user_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../header-user.component */ "lyCO");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "ofXK");
-
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
 
@@ -2351,7 +2554,7 @@ class UserAppointmentComponent {
     rescheduleAppointment(bookingId) {
         localStorage.setItem("bookingId", bookingId);
         //this.dataService.setBookingId(bookingId);
-        this.route.navigate(['/rescheduleAppointment'], { skipLocationChange: true });
+        this.route.navigate(['/users/rescheduleAppointment'], { skipLocationChange: true });
     }
     deleteAppointment(bookingId) {
         const flag = confirm("Do you really want to delete the appointment?");
@@ -2362,7 +2565,7 @@ class UserAppointmentComponent {
         }
     }
     goBack() {
-        this.route.navigate(['/userHome'], { skipLocationChange: true });
+        this.route.navigate(['/users/userHome'], { skipLocationChange: true });
     }
 }
 UserAppointmentComponent.ɵfac = function UserAppointmentComponent_Factory(t) { return new (t || UserAppointmentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_2__["WeCareService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_3__["DataSharingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"])); };
@@ -2380,7 +2583,7 @@ UserAppointmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.data);
-    } }, directives: [_header_user_component__WEBPACK_IMPORTED_MODULE_5__["HeaderUserComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgForOf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1c2VyLWFwcG9pbnRtZW50LmNvbXBvbmVudC5jc3MifQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1c2VyLWFwcG9pbnRtZW50LmNvbXBvbmVudC5jc3MifQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserAppointmentComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -2407,9 +2610,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _we_care_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../we-care.service */ "2Ftl");
 /* harmony import */ var _Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Shared/data-sharing.service */ "/qIS");
-/* harmony import */ var _header_coach_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../header-coach.component */ "Pmgu");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
-
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
 
@@ -2483,7 +2684,7 @@ CoachHomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.bookings.length);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.bookings.length);
-    } }, directives: [_header_coach_component__WEBPACK_IMPORTED_MODULE_4__["HeaderCoachComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjb2FjaC1ob21lLmNvbXBvbmVudC5jc3MifQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjb2FjaC1ob21lLmNvbXBvbmVudC5jc3MifQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CoachHomeComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -2511,9 +2712,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _we_care_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../we-care.service */ "2Ftl");
 /* harmony import */ var _Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/data-sharing.service */ "/qIS");
-/* harmony import */ var _header_user_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../header-user.component */ "lyCO");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "ofXK");
-
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
 
@@ -2540,7 +2739,7 @@ class UserProfileComponent {
         this.service.getUserProfile(this.userId).subscribe((data) => this.data = data.data['user_details'], err => console.log(err));
     }
     goBack() {
-        this.route.navigate(['/userHome'], { skipLocationChange: true });
+        this.route.navigate(['/users/userHome'], { skipLocationChange: true });
     }
 }
 UserProfileComponent.ɵfac = function UserProfileComponent_Factory(t) { return new (t || UserProfileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_we_care_service__WEBPACK_IMPORTED_MODULE_3__["WeCareService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_Shared_data_sharing_service__WEBPACK_IMPORTED_MODULE_4__["DataSharingService"])); };
@@ -2588,7 +2787,7 @@ UserProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Contact: ", ctx.data.MobileNumber, "");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Address: ", ctx.data.City + ", " + ctx.data.State + ", " + ctx.data.Country, "");
-    } }, directives: [_header_user_component__WEBPACK_IMPORTED_MODULE_5__["HeaderUserComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgSwitchCase"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1c2VyLXByb2ZpbGUuY29tcG9uZW50LmNzcyJ9 */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitchCase"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1c2VyLXByb2ZpbGUuY29tcG9uZW50LmNzcyJ9 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserProfileComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -2618,20 +2817,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_signup_user_signup_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user-signup/user-signup.component */ "kwa7");
 /* harmony import */ var _user_login_user_login_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user-login/user-login.component */ "W61y");
 /* harmony import */ var _coach_login_coach_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./coach-login/coach-login.component */ "hcwU");
-/* harmony import */ var _user_home_user_home_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user-home/user-home.component */ "Yq+j");
-/* harmony import */ var _coach_home_coach_home_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./coach-home/coach-home.component */ "okYT");
-/* harmony import */ var _coach_home_coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./coach-home/coach-profile/coach-profile.component */ "lBVW");
-/* harmony import */ var _user_home_user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user-home/user-profile/user-profile.component */ "rFBD");
-/* harmony import */ var _user_home_book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./user-home/book-appointment/book-appointment.component */ "SRIP");
-/* harmony import */ var _user_home_user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./user-home/user-appointment/user-appointment.component */ "nXsA");
-/* harmony import */ var _user_home_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./user-home/reschedule-appointment/reschedule-appointment.component */ "D8YL");
-
-
-
-
-
-
-
 
 
 
@@ -2647,14 +2832,8 @@ const routes = [
     { path: "coachLogin", component: _coach_login_coach_login_component__WEBPACK_IMPORTED_MODULE_6__["CoachLoginComponent"] },
     { path: "userSignup", component: _user_signup_user_signup_component__WEBPACK_IMPORTED_MODULE_4__["UserSignupComponent"] },
     { path: "userLogin", component: _user_login_user_login_component__WEBPACK_IMPORTED_MODULE_5__["UserLoginComponent"] },
-    { path: "userHome", component: _user_home_user_home_component__WEBPACK_IMPORTED_MODULE_7__["UserHomeComponent"] },
-    { path: "coachHome", component: _coach_home_coach_home_component__WEBPACK_IMPORTED_MODULE_8__["CoachHomeComponent"] },
-    { path: "coachProfile", component: _coach_home_coach_profile_coach_profile_component__WEBPACK_IMPORTED_MODULE_9__["CoachProfileComponent"] },
-    { path: "userProfile", component: _user_home_user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_10__["UserProfileComponent"] },
-    { path: "bookAppointment", component: _user_home_book_appointment_book_appointment_component__WEBPACK_IMPORTED_MODULE_11__["BookAppointmentComponent"] },
-    { path: "userAppointments", component: _user_home_user_appointment_user_appointment_component__WEBPACK_IMPORTED_MODULE_12__["UserAppointmentComponent"] },
-    { path: "rescheduleAppointment", component: _user_home_reschedule_appointment_reschedule_appointment_component__WEBPACK_IMPORTED_MODULE_13__["RescheduleAppointmentComponent"] },
-    { path: "userViewProfile", component: _user_home_user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_10__["UserProfileComponent"] },
+    { path: 'users', loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./user-home/user.module */ "b0Bv")).then(m => m.UserModule) },
+    { path: 'coaches', loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./coach-home/coach.module */ "ZxLq")).then(m => m.CoachModule) },
     { path: "", pathMatch: "full", redirectTo: "/home" },
     { path: "**", pathMatch: "full", redirectTo: "/home" }
 ];

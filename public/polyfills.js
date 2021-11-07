@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\kushvina\Desktop\We Care\We-Care---Angular-NodeJs\Frontend\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! C:\Users\kushvina\Desktop\We Care\We-Care---Angular-NodeJs\frontend\src\polyfills.ts */"hN/g");
 
 
 /***/ }),
